@@ -32,6 +32,12 @@ configurations {
     }
 }
 
+idea {
+    module {
+        downloadJavadoc true
+    }
+}
+
 dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile "org.springframework.boot:spring-boot-starter-logging"
