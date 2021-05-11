@@ -2,8 +2,10 @@ package helloworld
 
 class QuoteController {
 
+    static scaffold = Quote
+
     def index() {
-        redirect(action: "home")
+        respond Quote.list()
     }
 
     def home() {
@@ -11,8 +13,14 @@ class QuoteController {
     }
 
     def random() {
-        def staticAuthor = "Anonymous"
-        def staticContent = "Real Programmers do not each quiche!"
-        [ author: staticAuthor, content: staticContent ]
+        def allQuotes = Quote.all
+        def randomQuote
+        if (allQuotes.size() > 0) {
+            def randomIdx = new Random().nextInt(allQuotes.size())
+            randomQuote = allQuotes[randomIdx]
+        } else {
+            randomQuote = new Quote(author: "Anonymous", content: "Real Programmers do not each quiche!")
+        }
+        [ quote: randomQuote ]
     }
 }

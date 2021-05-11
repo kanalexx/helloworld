@@ -47,6 +47,7 @@ spring:
     h2:
         console:
           enabled: true
+          # Доступ к консоли по адресу context-path + h2.console.path
           path: /h2
 management:
     endpoints:
@@ -124,10 +125,6 @@ dataSource:
 
 environments:
     development:
-        grails:
-            plugin:
-                console:
-                    enabled: true
         dataSource:
             dbCreate: update
 #            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE

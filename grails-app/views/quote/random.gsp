@@ -13,9 +13,9 @@
 
 <body>
 <div id="quote">
-    <q>${content}</q>
+    <q>${quote.content}</q>
 
-    <p>${author}</p>
+    <p>${quote.author}</p>
 </div>
 </body>
 </html>
