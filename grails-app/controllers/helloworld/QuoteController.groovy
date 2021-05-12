@@ -16,7 +16,7 @@ class QuoteController {
 
     def random() {
         def randomQuote = quoteService.getRandomQuote()
-        [ quote: randomQuote ]
+        return [ quote: randomQuote ]
     }
 
     def ajaxRandom() {
