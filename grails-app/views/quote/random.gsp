@@ -9,9 +9,19 @@
 <html>
 <head>
     <title>Random Quote</title>
+%{--    Подключение библиотеки jQuery --}%
+    <asset:javascript src="jquery-3.3.1.min.js"/>
 </head>
 
 <body>
+<ul id="menu">
+    <li><g:remoteLink action="ajaxRandom" update="quote">
+        Next Quote
+    </g:remoteLink></li>
+    <li><g:link action="index">
+        Admin
+    </g:link></li>
+</ul>
 <div id="quote">
     <q>${quote.content}</q>
 

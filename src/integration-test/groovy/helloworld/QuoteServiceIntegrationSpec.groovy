@@ -1,8 +1,7 @@
 package helloworld
 
+import grails.gorm.transactions.Rollback
 import grails.testing.mixin.integration.Integration
-import grails.gorm.transactions.*
-import org.junit.Assert
 import spock.lang.Specification
 
 @Integration
@@ -22,7 +21,7 @@ class QuoteServiceIntegrationSpec extends Specification {
         when:
             def staticQuote = quoteService.getStaticQuote()
         then:
-            Assert.assertEquals("Anonymous", staticQuote.author)
-            Assert.assertEquals("Real Programmers Don’t eat quiche!", staticQuote.content)
+            staticQuote.author == "Anonymous"
+            staticQuote.content == "Real Programmers do not eat quiche!"
     }
 }
