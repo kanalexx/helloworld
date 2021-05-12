@@ -100,7 +100,8 @@ tasks.withType(GroovyCompile) {
 }
 
 webdriverBinaries {
-    chromedriver '2.45.0'
+    // из-за chromedriver не компилируются тесты
+//    chromedriver '2.45.0'
     geckodriver '0.24.0'
 }
 

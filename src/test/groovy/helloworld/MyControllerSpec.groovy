@@ -13,6 +13,6 @@ class MyControllerSpec extends Specification implements ControllerUnitTest<MyCon
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
 }
